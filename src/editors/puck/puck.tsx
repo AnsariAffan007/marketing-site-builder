@@ -3,7 +3,10 @@ import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Banner from "./components/Banner";
 import Event from "./components/Event";
+import Exhibitors from "./components/Exhibitors";
+import Sponsors from "./components/Sponsors";
 
+// #region Type
 type Components = {
   Header: { headers: { text: string; url: string }[] };
   Menu: unknown;
@@ -19,8 +22,11 @@ type Components = {
     dateTime: string;
     buttonText: string;
   };
+  Exhibitors: unknown;
+  Sponsors: unknown;
 };
 
+// #region Config
 const config: Config<Components> = {
   components: {
     Header: {
@@ -115,9 +121,16 @@ const config: Config<Components> = {
       },
       render: Event,
     },
+    Exhibitors: {
+      render: Exhibitors,
+    },
+    Sponsors: {
+      render: Sponsors,
+    },
   },
 };
 
+// #region Init data
 const initialData: Partial<Data<Components>> = {
   content: [
     {
@@ -151,6 +164,7 @@ const initialData: Partial<Data<Components>> = {
   ],
 };
 
+// #region MAIN
 function PuckEditor() {
   const save = (data: unknown) => {
     console.log(data);
