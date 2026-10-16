@@ -50,3 +50,15 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  /* Colors */
+  --puck-color-interactive: #1677ff;
+  --puck-color-interactive-hover: #1677ff;
+  --puck-color-interactive-active: #1677ff;
+  --puck-color-focus-ring: #1677ff;
+  --puck-color-border-hover: #1677ff;
+  /* Font family */
+  --puck-font-family: "Public Sans", sans-serif;
+  
+}
