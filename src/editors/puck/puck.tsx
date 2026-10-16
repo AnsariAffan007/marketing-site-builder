@@ -2,6 +2,7 @@ import { Puck, type Config, type Data } from "@puckeditor/core";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Banner from "./components/Banner";
+import Event from "./components/Event";
 
 type Components = {
   Header: { headers: { text: string; url: string }[] };
@@ -11,6 +12,12 @@ type Components = {
     text: string;
     ctaButton1: { text: string; url: string };
     ctaButton2: { text: string; url: string };
+  };
+  Event: {
+    imageUrl: string;
+    title: string;
+    dateTime: string;
+    buttonText: string;
   };
 };
 
@@ -91,6 +98,22 @@ const config: Config<Components> = {
         duplicate: false,
         insert: false,
       },
+    },
+    Event: {
+      defaultProps: {
+        imageUrl:
+          "https://dev-resources.poweround.com/static/tenant/module-banners/Event.jpg",
+        title: "Conference 2027",
+        dateTime: "19th October - 2nd November, 2026",
+        buttonText: "Visit Event",
+      },
+      fields: {
+        imageUrl: { type: "text" },
+        title: { type: "text" },
+        dateTime: { type: "text" },
+        buttonText: { type: "text" },
+      },
+      render: Event,
     },
   },
 };
